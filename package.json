@@ -1,0 +1,20 @@
+{
+  "name": "serversage",
+  "version": "1.0.0",
+  "description": "A guided Discord server setup bot with safe, preview-first templates.",
+  "type": "module",
+  "engines": {
+    "node": ">=24.17.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.mjs",
+    "commands:register": "node --env-file-if-exists=.env scripts/register-commands.mjs",
+    "test": "node --test",
+    "lint": "node --check src/index.mjs && node --check src/commands.mjs && node --check src/templates.mjs && node --check src/setup-service.mjs && node --check src/discord-adapter.mjs && node --check src/interactions.mjs && node --check scripts/register-commands.mjs && node --check test/templates.test.mjs && node --check test/setup-service.test.mjs && node --check test/interactions.test.mjs && node --check test/commands.test.mjs",
+    "check": "npm run lint && npm test"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0"
+  },
+  "license": "MIT"
+}
